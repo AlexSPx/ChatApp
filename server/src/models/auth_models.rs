@@ -1,4 +1,5 @@
-use serde::Deserialize;
+use serde::{Deserialize, Serialize};
+use crate::schema::user;
 
 #[derive(Debug, Deserialize)]
 pub struct LoginBody {
@@ -6,7 +7,8 @@ pub struct LoginBody {
     pub password: String
 }
 
-#[derive(Debug, Deserialize)]
+#[derive(Insertable, Deserialize, Serialize)]
+#[table_name = "user"]
 pub struct RegisterBody {
     pub name: String,
     pub username: String,
