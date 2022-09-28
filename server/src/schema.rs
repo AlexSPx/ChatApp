@@ -11,7 +11,7 @@ table! {
     server (id) {
         id -> Int4,
         name -> Text,
-        created_at -> Date,
+        created_at -> Nullable<Date>,
         users -> Int4,
         channels -> Int4,
         settings -> Int4,
@@ -23,7 +23,7 @@ table! {
         id -> Int4,
         user_id -> Int4,
         server_id -> Int4,
-        joined_at -> Date,
+        joined_at -> Nullable<Date>,
         settings -> Int4,
     }
 }

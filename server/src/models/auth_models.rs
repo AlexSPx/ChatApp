@@ -7,7 +7,7 @@ pub struct LoginBody {
     pub password: String
 }
 
-#[derive(Insertable, Deserialize, Serialize)]
+#[derive(Insertable, Deserialize, Serialize, Debug)]
 #[table_name = "user"]
 pub struct RegisterBody {
     pub name: String,

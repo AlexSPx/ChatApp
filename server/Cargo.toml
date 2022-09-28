@@ -15,5 +15,8 @@ dotenv = "0.15.0"
 diesel = { version = "2.0.0", features = ["postgres", "r2d2", "chrono"] }
 r2d2 = "0.8.10"
 r2d2-diesel = "1.0.0"
-actix-session = { version = "0.7.2", features = ["cookie-session"] }
+actix-session = { version = "0.7.2", features = ["redis-rs-session"] }
+actix-identity = "0.5.2"
+actix-cors = "0.6.3"
 scrypt = "0.10.0"
+env_logger = "0.9.0"

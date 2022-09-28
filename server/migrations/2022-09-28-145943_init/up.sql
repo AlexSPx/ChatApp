@@ -1,18 +1,18 @@
 CREATE TABLE "user"(
-    "id" INTEGER NOT NULL,
+    "id" serial,
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "password" TEXT NOT NULL,
-    "created_at" DATE NOT NULL DEFAULT Now(),
-    "updated_at" DATE NOT NULL DEFAULT Now()
+    "created_at" DATE DEFAULT Now(),
+    "updated_at" DATE DEFAULT Now()
 );
 ALTER TABLE
     "user" ADD PRIMARY KEY("id");
 CREATE TABLE "server"(
-    "id" INTEGER NOT NULL,
+    "id" serial,
     "name" TEXT NOT NULL,
-    "created_at" DATE NOT NULL DEFAULT Now(),
+    "created_at" DATE DEFAULT Now(),
     "users" INTEGER NOT NULL,
     "channels" INTEGER NOT NULL,
     "settings" INTEGER NOT NULL
@@ -20,16 +20,16 @@ CREATE TABLE "server"(
 ALTER TABLE
     "server" ADD PRIMARY KEY("id");
 CREATE TABLE "server_join"(
-    "id" INTEGER NOT NULL,
+    "id" serial,
     "user_id" INTEGER NOT NULL,
     "server_id" INTEGER NOT NULL,
-    "joined_at" DATE NOT NULL,
+    "joined_at" DATE DEFAULT Now(),
     "settings" INTEGER NOT NULL
 );
 ALTER TABLE
     "server_join" ADD PRIMARY KEY("id");
 CREATE TABLE "server_role"(
-    "id" INTEGER NOT NULL,
+    "id" serial,
     "server_id" INTEGER NOT NULL,
     "name" TEXT NOT NULL,
     "is_admin" BOOLEAN NOT NULL
@@ -37,7 +37,7 @@ CREATE TABLE "server_role"(
 ALTER TABLE
     "server_role" ADD PRIMARY KEY("id");
 CREATE TABLE "channel"(
-    "id" INTEGER NOT NULL,
+    "id" serial,
     "name" TEXT NOT NULL,
     "allowed_users" INTEGER NOT NULL,
     "allowed_roles" TEXT NOT NULL
@@ -45,13 +45,13 @@ CREATE TABLE "channel"(
 ALTER TABLE
     "channel" ADD PRIMARY KEY("id");
 CREATE TABLE "server_settings"(
-    "id" INTEGER NOT NULL,
+    "id" serial,
     "roles" TEXT NOT NULL
 );
 ALTER TABLE
     "server_settings" ADD PRIMARY KEY("id");
 CREATE TABLE "user_server_settings"(
-    "id" INTEGER NOT NULL,
+    "id" serial,
     "roles" TEXT NOT NULL
 );
 ALTER TABLE

@@ -1,2 +1,0 @@
-ALTER TABLE "user" ALTER COLUMN "created_at" DROP NOT NULL;
-ALTER TABLE "user" ALTER COLUMN "updated_at" DROP NOT NULL;
