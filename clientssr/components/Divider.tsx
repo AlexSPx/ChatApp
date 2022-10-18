@@ -15,5 +15,5 @@ export default function Divider({ children, style }: Props) {
       </div>
     );
   }
-  return <div className={`flex flex-row border-b mt-4 w-full ${style}`}></div>;
+  return <div className={`flex border-b w-full ${style}`}></div>;
 }

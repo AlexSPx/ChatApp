@@ -1,5 +1,5 @@
 .modal-box {
-  @apply z-50 flex px-5 flex-row items-center shadow-lg rounded-xl w-full md:w-96 h-24 bg-charcoal-light border border-charcoal-dark relative overflow-hidden m-1;
+  @apply z-50 flex px-5 flex-row items-center shadow-lg rounded-xl w-full md:w-96 h-24 bg-light border border-contrast-bg relative overflow-hidden m-1;
 }
 
 .modal-circle {

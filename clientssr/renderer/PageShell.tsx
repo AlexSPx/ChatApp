@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { PageContextProvider } from "./usePageContext";
 import type { PageContext } from "./types";
 import "./PageShell.css";
@@ -15,8 +15,18 @@ function PageShell({
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        {children}
+        <Layout>
+          {children}
+        </Layout>
       </PageContextProvider>
     </React.StrictMode>
   );
+}
+
+const Layout: React.FunctionComponent<PropsWithChildren> = ({children}) => {
+  return (
+    <div className="flex w-screen h-screen">
+      {children}
+    </div>
+  )
 }
